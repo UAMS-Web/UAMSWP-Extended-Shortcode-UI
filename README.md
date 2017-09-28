@@ -1,5 +1,3 @@
-# WSUWP Extended Shortcode UI
+# UAMSWP Extended Shortcode UI
 
-[![Build Status](https://travis-ci.org/washingtonstateuniversity/WSUWP-Extended-Shortcode-UI.svg?branch=master)](https://travis-ci.org/washingtonstateuniversity/WSUWP-Extended-Shortcode-UI)
-
-A WordPress plugin that extends Shortcode UI.
+A WordPress plugin that extends Shortcode UI for UAMS Back-to-Five theme.
