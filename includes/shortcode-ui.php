@@ -15,7 +15,9 @@ add_action( 'plugins_loaded', 'UAMS\Shortcode_UI\bootstrap' );
  */
 function bootstrap() {
 	include_once( __DIR__ . '/image-shortcake.php' );
-	include_once( __DIR__ . '/news-shortcake.php' );
+	if( class_exists( 'UAMS_Syndication_Shortcode_Base' ) ) {
+		include_once( __DIR__ . '/news-shortcake.php' );
+	}
 	include_once( __DIR__ . '/uamsbutton-shortcake.php');
 	include_once( __DIR__ . '/admincss.php');
 	include_once( __DIR__ . '/shortcake-bakery.php' );
