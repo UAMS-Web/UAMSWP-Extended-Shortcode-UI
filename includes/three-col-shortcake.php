@@ -1,6 +1,6 @@
 <?php
 
-namespace UAMS\Shortcode_UI\UAMS_Two_Col_Shortcake;
+namespace UAMS\Shortcode_UI\UAMS_Three_Col_Shortcake;
 
 /**
  * Two Column Shortcode.
