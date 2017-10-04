@@ -35,10 +35,10 @@ array(
 	'label'        => 'Column 1',
 	'attr'         => 'col1',
 	'type'         => 'textarea',
-	//'encode' => true,
-	'meta' => array(
-		'class' => 'shortcake-richtext',
-		),
+	'encode' => true,
+	// 'meta' => array(
+	// 	'class' => 'shortcake-richtext',
+	// 	),
 	'description'  => 'Basic HTML supported. Line breaks automatically become new paragraphs.',
 	),
 
@@ -48,7 +48,7 @@ array(
 	'attr'         => 'col2',
 	'type'         => 'textarea',
 	'description'  => 'Basic HTML supported. Line breaks automatically become new paragraphs.',
-	// 'encode' => true,
+	'encode' => true,
 	// 'meta' => array(
 	// 	'class' => 'shortcake-richtext',
 	// 	),

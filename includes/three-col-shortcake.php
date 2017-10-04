@@ -16,13 +16,13 @@ namespace UAMS\Shortcode_UI\UAMS_Three_Col_Shortcake;
 shortcode_ui_register_for_shortcode(
  
 /** Your shortcode handle */
-'sc_two_col',
+'sc_three_col',
  
 /** Your Shortcode label and icon */
 array(
  
 /** Label for your shortcode user interface. This part is required. */
-'label' => 'Row, Two Columns',
+'label' => 'Row, Three Columns',
  
 /** Icon or an image attachment for shortcode. Optional. src or dashicons-$icon.  */
 'listItemImage' => 'dashicons-media-spreadsheet',
@@ -36,6 +36,7 @@ array(
 	'attr'         => 'col1',
 	'type'         => 'textarea',
 	'description'  => 'Basic HTML supported. Line breaks automatically become new paragraphs.',
+	'encode'	   => true,
 	),
 
 	/** This is the HTML for Column 2 */
@@ -44,6 +45,7 @@ array(
 	'attr'         => 'col2',
 	'type'         => 'textarea',
 	'description'  => 'Basic HTML supported. Line breaks automatically become new paragraphs.',
+	'encode'	   => true,
 	),
 
 	/** This is the HTML for Column 2 */
@@ -52,6 +54,7 @@ array(
 	'attr'         => 'col3',
 	'type'         => 'textarea',
 	'description'  => 'Basic HTML supported. Line breaks automatically become new paragraphs.',
+	'encode'	   => true,
 	),
 
 	/** Column Ratios */

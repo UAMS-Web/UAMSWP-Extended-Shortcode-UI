@@ -12,8 +12,10 @@ function two_col_shortcode( $atts ) {
                ),
                $atts
        ));
-       $content1 = preg_replace( '/<br class="nc".\/>/', '', $col1 );
-       $content2 = preg_replace( '/<br class="nc".\/>/', '', $col2 );
+       $content1 = urldecode($col1);
+       $content2 = urldecode($col2);
+       $content1 = preg_replace( '/<br class="nc".\/>/', '', $content1 );
+       $content2 = preg_replace( '/<br class="nc".\/>/', '', $content2 );
        if ($ratio == '6_6') {
        		$col1class = 'col-md-6';
        		$col2class = 'col-md-6';
@@ -33,9 +35,9 @@ function two_col_shortcode( $atts ) {
        
        $result = '<div class="row '. $class .'">';
        $result .= '<div class="' . $col1class .'">';
-       $result .= $content1; //urldecode($col1);
+       $result .= do_shortcode( $content1 );
        $result .= '</div><div class="' . $col2class .'">';
-       $result .= $content2; //urldecode($col2);
+       $result .= do_shortcode( $content2 );
        $result .= '</div></div>';
 
        return $result;
@@ -54,9 +56,12 @@ function three_col_shortcode( $atts ) {
                ),
                $atts
        ));
-       $content1 = preg_replace( '/<br class="nc".\/>/', '', $col1 );
-       $content2 = preg_replace( '/<br class="nc".\/>/', '', $col2 );
-       $content3 = preg_replace( '/<br class="nc".\/>/', '', $col3 );
+       $content1 = urldecode($col1);
+       $content2 = urldecode($col2);
+       $content3 = urldecode($col3);
+       $content1 = preg_replace( '/<br class="nc".\/>/', '', $content1 );
+       $content2 = preg_replace( '/<br class="nc".\/>/', '', $content2 );
+       $content3 = preg_replace( '/<br class="nc".\/>/', '', $content3 );
        if ($ratio == '4_4_4') {
        		$col1class = 'col-md-4';
        		$col2class = 'col-md-4';
@@ -77,11 +82,39 @@ function three_col_shortcode( $atts ) {
        
        $result = '<div class="row '. $class .'">';
        $result .= '<div class="' . $col1class .'">';
-       $result .= $content1;
+       $result .= do_shortcode( $content1 );
        $result .= '</div><div class="' . $col2class .'">';
-       $result .= $content2;
+       $result .= do_shortcode( $content2 );
        $result .= '</div><div class="' . $col3class .'">';
-       $result .= $content3;
+       $result .= do_shortcode( $content3 );
+       $result .= '</div></div>';
+
+       return $result;
+}
+
+add_shortcode( 'icon_box', 'icon_box_shortcode' );
+
+function icon_box_shortcode( $atts ) {
+       extract( shortcode_atts(
+               array(
+                       'view' => 'default',
+                       'background' => 'none',
+                       'icon' => '',
+                       'title' => '',
+                       'link' => '',
+                       'description' => '',
+                       'class' => ''
+               ),
+               $atts
+       ));
+       $content = preg_replace( '/<br class="nc".\/>/', '', $col1 );
+       
+       $result = '<div class="icon-box-wrapper '. $view .' '. $background .' '. $class .'">';
+       $result .= '<div class="icon-box-icon">';
+       $result .= '<a href="'. $link .'"><span class="'. $icon .'" aria-hidden="true"></span></a>';
+       $result .= '</div><div class="icon-box-content">';
+       $result .= '<a href="'. $link .'" class="icon-box-tile-link"><h3 class="icon-box-title">' . $title . '</h3></a>';
+       $result .= '<p class="icon-box-description">' . $description .'</p>';
        $result .= '</div></div>';
 
        return $result;
