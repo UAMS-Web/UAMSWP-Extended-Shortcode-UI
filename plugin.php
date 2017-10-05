@@ -13,6 +13,8 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+if ( ! function_exists( 'is_plugin_active' ) )
+     require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 // This plugin uses namespaces and requires PHP 5.3 or greater.
 if ( version_compare( PHP_VERSION, '5.3', '<' ) ) {
 	add_action( 'admin_notices', create_function( '',
