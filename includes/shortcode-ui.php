@@ -23,6 +23,7 @@ function bootstrap() {
 	include_once( __DIR__ . '/two-col-shortcake.php');
 	include_once( __DIR__ . '/three-col-shortcake.php');
 	include_once( __DIR__ . '/icon-box-shortcake.php');
+	include_once( __DIR__ . '/text-box-shortcake.php');
 	include_once( __DIR__ . '/admincss.php'); // Add Shortcode CSS to backend
 	include_once( __DIR__ . '/shortcake-bakery.php' );
 }

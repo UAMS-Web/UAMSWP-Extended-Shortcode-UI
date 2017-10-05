@@ -107,15 +107,39 @@ function icon_box_shortcode( $atts ) {
                ),
                $atts
        ));
-       $content = preg_replace( '/<br class="nc".\/>/', '', $col1 );
+       $content = preg_replace( '/<br class="nc".\/>/', '', $description );
        
        $result = '<div class="icon-box-wrapper '. $view .' '. $background .' '. $class .'">';
        $result .= '<div class="icon-box-icon">';
        $result .= '<a href="'. $link .'"><span class="'. $icon .'" aria-hidden="true"></span></a>';
        $result .= '</div><div class="icon-box-content">';
        $result .= '<a href="'. $link .'" class="icon-box-tile-link"><h3 class="icon-box-title">' . $title . '</h3></a>';
-       $result .= '<p class="icon-box-description">' . $description .'</p>';
+       $result .= '<p class="icon-box-description">' . $content .'</p>';
        $result .= '</div></div>';
+
+       return $result;
+}
+
+add_shortcode( 'text_box', 'text_box_shortcode' );
+
+function text_box_shortcode( $atts ) {
+       extract( shortcode_atts(
+               array(
+                       'background' => 'none',
+                       'attachment' => '',
+                       'color'		=> 'dark',
+                       'title' => '',
+                       'text' => '',
+                       'class' => ''
+               ),
+               $atts
+       ));
+       $content = preg_replace( '/<br class="nc".\/>/', '', $text );
+       
+       $result = '<div class="text-box-wrapper '. $background .' '. $color .' '. $class .'" '. (($background === "image") && ($attachment) ? 'style="background-image:url('. wp_kses_post( wp_get_attachment_image_url($attachment, 'Full') ) .');background-position: center;"' : '' ) .'>';
+       $result .= '<h2 class="text-box-title">' . $title . '</h3>';
+       $result .= '<div class="text-box-content">' . $content .'</div>';
+       $result .= '</div>';
 
        return $result;
 }
