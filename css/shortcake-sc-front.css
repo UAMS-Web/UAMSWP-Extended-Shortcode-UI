@@ -1,3 +1,9 @@
+/* Full Width Option */
+.uams-full-width {
+  width: 100vw;
+  margin-left: calc( 50% - 50vw);
+  margin-right: calc( 50% - 50vw);
+}
 /* Icon Box Shortcodes */
 .icon-box-wrapper {
   text-align: center;
@@ -37,20 +43,6 @@
 .icon-box-wrapper a.icon-box-tile-link:focus {
   border-bottom-color: #9d2235;
 }
-.icon-box-wrapper.default.red a.icon-box-tile-link,
-.icon-box-wrapper.default.red a.icon-box-tile-link:hover,
-.icon-box-wrapper.default.red a.icon-box-tile-link:focus,
-.icon-box-wrapper.default.blue a.icon-box-tile-link,
-.icon-box-wrapper.default.blue a.icon-box-tile-link:hover,
-.icon-box-wrapper.default.blue a.icon-box-tile-link:focus,
-.icon-box-wrapper.boxed.red a.icon-box-tile-link,
-.icon-box-wrapper.boxed.red a.icon-box-tile-link:hover,
-.icon-box-wrapper.boxed.red a.icon-box-tile-link:focus,
-.icon-box-wrapper.boxed.blue a.icon-box-tile-link,
-.icon-box-wrapper.boxed.blue a.icon-box-tile-link:hover,
-.icon-box-wrapper.boxed.blue a.icon-box-tile-link:focus {
-  border-bottom-color: #fff;
-}
 .icon-box-content {
   padding: 65px 20px 10px;
   margin-top: -55px;
@@ -67,6 +59,20 @@
 }
 .icon-box-wrapper.default.blue {
   background-color: #22739d;
+}
+.icon-box-wrapper.default.red a.icon-box-tile-link,
+.icon-box-wrapper.default.red a.icon-box-tile-link:hover,
+.icon-box-wrapper.default.red a.icon-box-tile-link:focus,
+.icon-box-wrapper.default.blue a.icon-box-tile-link,
+.icon-box-wrapper.default.blue a.icon-box-tile-link:hover,
+.icon-box-wrapper.default.blue a.icon-box-tile-link:focus,
+.icon-box-wrapper.boxed.red a.icon-box-tile-link,
+.icon-box-wrapper.boxed.red a.icon-box-tile-link:hover,
+.icon-box-wrapper.boxed.red a.icon-box-tile-link:focus,
+.icon-box-wrapper.boxed.blue a.icon-box-tile-link,
+.icon-box-wrapper.boxed.blue a.icon-box-tile-link:hover,
+.icon-box-wrapper.boxed.blue a.icon-box-tile-link:focus {
+  border-bottom-color: #fff;
 }
 .icon-box-icon.default span:before {
   color: #e0e0e0;
@@ -161,4 +167,22 @@
 .icon-box-wrapper.framed.red .icon-box-icon span:before,
 .icon-box-wrapper.framed.blue .icon-box-icon span:before {
   color: #fff;
+}
+@media (min-width: 768px) {
+  .icon-box-content {
+    max-width: 750px;
+    margin: -55px auto 0;
+  }
+}
+@media (min-width: 992px) {
+  .icon-box-content {
+    max-width: 970px;
+    margin: -55px auto 0;
+  }
+}
+@media (min-width: 1200px) {
+  .icon-box-content {
+    max-width: 1170px;
+    margin: -55px auto 0;
+  }
 }
