@@ -136,7 +136,7 @@ function text_box_shortcode( $atts ) {
        ));
        $content = preg_replace( '/<br class="nc".\/>/', '', $text );
        
-       $result = '<div class="text-box-wrapper '. $background .' '. $color .' '. $class .'" '. (($background === "image") && ($attachment) ? 'style="background-image:url('. wp_kses_post( wp_get_attachment_image_url($attachment, 'Full') ) .');background-position: center;"' : '' ) .'>';
+       $result = '<div class="text-box-wrapper '. $background .' '. $color .' '. $class .'" '. (($background === "image") && ($attachment) ? 'style="background-image:url('. wp_kses_post( wp_get_attachment_image_url($attachment, 'Full') ) .');"' : '' ) .'>';
        $result .= '<h2 class="text-box-title">' . $title . '</h3>';
        $result .= '<div class="text-box-content">' . $content .'</div>';
        $result .= '</div>';

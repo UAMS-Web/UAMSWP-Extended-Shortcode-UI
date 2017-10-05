@@ -173,6 +173,11 @@
   padding: 25px 15px 45px;
   text-align: center;
 }
+.text-box-wrapper.image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .text-box-wrapper.image h2 {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
