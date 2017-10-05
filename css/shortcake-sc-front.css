@@ -18,8 +18,8 @@
   display: inline-block;
   padding: 18px;
   border-radius: 100%;
-  background-color: #fff;
-  border: 3px solid #fff; //Make same as bg color
+  background-color: transparent;
+  border: 3px solid transparent; //Make same as bg color
 }
 .icon-box-icon a span:focus,
 .icon-box-icon a span:hover {
@@ -36,6 +36,20 @@
 .icon-box-wrapper a.icon-box-tile-link:hover,
 .icon-box-wrapper a.icon-box-tile-link:focus {
   border-bottom-color: #9d2235;
+}
+.icon-box-wrapper.default.red a.icon-box-tile-link,
+.icon-box-wrapper.default.red a.icon-box-tile-link:hover,
+.icon-box-wrapper.default.red a.icon-box-tile-link:focus,
+.icon-box-wrapper.default.blue a.icon-box-tile-link,
+.icon-box-wrapper.default.blue a.icon-box-tile-link:hover,
+.icon-box-wrapper.default.blue a.icon-box-tile-link:focus,
+.icon-box-wrapper.boxed.red a.icon-box-tile-link,
+.icon-box-wrapper.boxed.red a.icon-box-tile-link:hover,
+.icon-box-wrapper.boxed.red a.icon-box-tile-link:focus,
+.icon-box-wrapper.boxed.blue a.icon-box-tile-link,
+.icon-box-wrapper.boxed.blue a.icon-box-tile-link:hover,
+.icon-box-wrapper.boxed.blue a.icon-box-tile-link:focus {
+  border-bottom-color: #fff;
 }
 .icon-box-content {
   padding: 65px 20px 10px;
@@ -70,7 +84,7 @@
   color: #22739d;
 }
 .icon-box-wrapper.default.none .icon-box-icon span:before {
-  color: #eee;
+  color: #e0e0e0;
 }
 .icon-box-wrapper.default.gray .icon-box-icon span:before {
   color: #616161;
@@ -79,23 +93,36 @@
 .icon-box-wrapper.default.blue .icon-box-icon span:before {
   color: #fafafa;
 }
-.icon-box-wrapper.red a h3.icon-box-title, .icon-box-wrapper.red a h3,
-.icon-box-wrapper.blue a h3.icon-box-title, .icon-box-wrapper.blue a h3 {
+.icon-box-wrapper.default.red .icon-box-icon span:hover,
+.icon-box-wrapper.default.red .icon-box-icon span:focus,
+.icon-box-wrapper.default.blue .icon-box-icon span:hover,
+.icon-box-wrapper.default.blue .icon-box-icon span:focus {
+  border-color: #fafafa;
+}
+.icon-box-wrapper.default.red a h3.icon-box-title, .icon-box-wrapper.default.red a h3,
+.icon-box-wrapper.default.blue a h3.icon-box-title, .icon-box-wrapper.default.blue a h3 {
   color: #fff;
 }
-.icon-box-wrapper.red a h3.icon-box-title {
+.icon-box-wrapper.default.red a h3.icon-box-title,
+.icon-box-wrapper.boxed.red a h3.icon-box-title  {
   color: #fff;
 }
-.icon-box-wrapper.red a.icon-box-tile-link,
-.icon-box-wrapper.red a.icon-box-tile-link:hover,
-.icon-box-wrapper.red a.icon-box-tile-link:focus,
-.icon-box-wrapper.blue a.icon-box-tile-link,
-.icon-box-wrapper.blue a.icon-box-tile-link:hover,
-.icon-box-wrapper.blue a.icon-box-tile-link:focus {
+.icon-box-wrapper.default.blue a h3.icon-box-title,
+.icon-box-wrapper.boxed.blue a h3.icon-box-title {
+  color: #fff;
+}
+.icon-box-wrapper.default.red a.icon-box-tile-link,
+.icon-box-wrapper.default.red a.icon-box-tile-link:hover,
+.icon-box-wrapper.default.red a.icon-box-tile-link:focus,
+.icon-box-wrapper.default.blue a.icon-box-tile-link,
+.icon-box-wrapper.default.blue a.icon-box-tile-link:hover,
+.icon-box-wrapper.default.blue a.icon-box-tile-link:focus {
   border-bottom-color: #fff;
 }
-.icon-box-wrapper.red .icon-box-description,
-.icon-box-wrapper.blue .icon-box-description {
+.icon-box-wrapper.default.red .icon-box-description,
+.icon-box-wrapper.default.blue .icon-box-description,
+.icon-box-wrapper.boxed.red .icon-box-description,
+.icon-box-wrapper.boxed.blue .icon-box-description {
   color: #fff;
 }
 .icon-box-wrapper.boxed.red .icon-box-content {
@@ -109,10 +136,29 @@
 }
 .icon-box-wrapper.boxed.gray .icon-box-icon a span {
   border-color: #eee;
+  background-color: #fff;
 }
 .icon-box-wrapper.boxed.blue .icon-box-icon a span {
   border-color: #22739d;
+  background-color: #fff;
 }
 .icon-box-wrapper.boxed.red .icon-box-icon a span {
   border-color: #9d2235;
+  background-color: #fff;
+}
+.icon-box-wrapper.framed.gray .icon-box-icon a span {
+  background-color: #eee;
+}
+.icon-box-wrapper.framed.blue .icon-box-icon a span {
+  background-color: #22739d;
+}
+.icon-box-wrapper.framed.red .icon-box-icon a span {
+  background-color: #9d2235;
+}
+.icon-box-wrapper.framed.gray .icon-box-icon span:before {
+  color: #616161;
+}
+.icon-box-wrapper.framed.red .icon-box-icon span:before,
+.icon-box-wrapper.framed.blue .icon-box-icon span:before {
+  color: #fff;
 }
