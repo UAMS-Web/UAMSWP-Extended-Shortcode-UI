@@ -14,6 +14,9 @@ function admin_editor_styles() {
 	}
 	add_editor_style( plugins_url( '../css/col-admin.css', __FILE__ ));
 	add_editor_style( plugins_url( '../css/box-admin.css', __FILE__ ));
+	if( function_exists( 'setup_uams_object' ) ) {
+		add_editor_style( plugins_url( '../css/icon-font-admin.css', __FILE__));
+	}
 }
 add_action( 'admin_init', 'admin_editor_styles' );
 
