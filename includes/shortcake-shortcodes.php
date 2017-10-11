@@ -143,3 +143,53 @@ function text_box_shortcode( $atts ) {
 
        return $result;
 }
+
+add_shortcode( 'boot_button', 'boot_button_shortcode' );
+
+function boot_button_shortcode( $atts ) {
+	extract( shortcode_atts(
+               array(
+                       'text' 		=> '',
+                       'title'	 	=> '',
+                       'url' 		=> '',
+                       'type' 		=> '',
+                       'size' 		=> '',                      
+                       'class' 		=> ''
+               ),
+               $atts
+       ));
+
+        $classes = array('btn');
+
+        if (empty($title)){
+        	if(isset($text)){
+            	$title = $text;
+        	}
+        }
+
+        if(empty($text)){
+            $text =  'No text in this button';
+        }
+
+        if (isset($type)){     
+        	array_push($classes, $type);
+        }
+
+        if (empty($url)){
+            $url = '#';
+        }
+
+        if (isset($size)){
+            array_push($classes, $size);
+        }
+
+        if (isset($class)){
+            array_push($classes, $class);
+        }
+
+        $class_string = implode($classes, ' ');
+
+        $result = sprintf('<a href="%s" title="%s"><button type="button" class="%s">%s</button></a>', $url, $title, $class_string, $text);
+
+       return $result;
+}
